@@ -1,0 +1,53 @@
+/* ====== media ====== */
+.t_media {
+  margin: 1px 10px 1px 10px;
+  min-height: 30px;
+  display: block;
+  overflow: auto;
+}
+
+img {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+p {
+  padding: 6px 12px;
+  max-width: 55%;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.sent{
+  clear: right;
+  float: right;
+}
+
+.msg-sent {
+  @extend .sent;
+  border-radius: 1.3em 0 0 1.3em;
+  background-color: #0084ff;
+  color: white;
+}
+
+.received{
+  margin-left: 6px;
+}
+
+.msg-received {
+  @extend .received;
+  border-radius: 0 1.3em 1.3em 0;
+  background-color: lightgrey;
+  color: black;
+}
+
+.sticker {
+  background-size: 576px 432px;
+  cursor: pointer;
+  height: 120px;
+  width: 120px;
+  background-position: -12px -12px;
+  image-rendering: -webkit-optimize-contrast;
+}

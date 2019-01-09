@@ -1,0 +1,12 @@
+<nav class="navbar narbar-default" (contextmenu)='rightClickEvent($event)'>
+    <div class="navbar-brand">
+      <a href="https://ng-book.com/2" class="navbar-brand">
+        <img src="assets/images/logos/ng-book-2-minibook.png" alt="">
+      </a>
+    </div>
+    <p class="navbar-text navbar-right">
+      <button class="btn btn-primary" type="button">
+        Notifications <span class="badge badge-light">{{ unreadMessagesCount | async }}</span>
+      </button>
+    </p>
+</nav>

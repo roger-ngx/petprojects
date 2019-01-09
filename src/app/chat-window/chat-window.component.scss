@@ -1,0 +1,50 @@
+.chat-window {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.border-style {
+  border-style: solid;
+  border-color: lightgray;
+}
+
+.ms-content{
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 1 1 0%;
+}
+
+.ms-body {
+  @extend .border-style;
+  overflow: auto;
+  padding: 0;
+  border-width: 0 1px 1px 1px;
+  flex: 1;
+}
+
+.ms-head {
+  @extend .border-style;
+  border-width: 0 0 1px 1px;
+  height: 49px;
+  min-height: 49px;
+  padding: 8px;
+  text-align: center;
+}
+
+.ms-foot {
+  @extend .border-style;
+  border-width: 0 1px 1px 1px;
+  padding: 8px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+}

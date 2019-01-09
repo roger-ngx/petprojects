@@ -1,0 +1,17 @@
+<div class="chat-window">
+  <div class='ms-head'>
+    <span>
+      {{currentThreadId}}
+    </span>
+  </div>
+
+  <div class='ms-content'>
+      <div class="ms-foot">
+          <app-chat-input (onMessageSent)='onMessageSent($event)' (onStickerSent)='onStickerSent($event)'></app-chat-input>
+      </div>
+
+      <div class="ms-body">
+          <app-chat-message [messages]="messages"></app-chat-message>
+        </div>
+  </div>
+</div>

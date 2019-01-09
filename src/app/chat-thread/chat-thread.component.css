@@ -1,0 +1,50 @@
+.thread {
+  display: flex;
+  flex: 1;
+  padding: 0 12px 0 12px;
+  width: 100%;
+  height: 64px;
+}
+
+img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.avatar{
+  display: flex;
+}
+
+.thread-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 0;
+  margin-left: 12px;
+}
+
+.t-name {
+  justify-content: space-between;
+  display: flex;
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.t-lmsg {
+  flex: 1 1 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 600px){
+  .thread-body{
+    display: none;
+  }
+}

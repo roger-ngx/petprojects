@@ -1,0 +1,120 @@
+.input-group{
+  display: flex;
+  flex-direction: row;
+}
+
+.input{
+  flex: 1;
+  padding-right: 8px;
+  max-height: 144px;
+  min-height: 18px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.message_area{
+  /* max-height: 144px;
+  width: 100%;
+  resize: none; */
+  height: 100%;
+  outline: none;
+  user-select: text;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  z-index: auto;
+  position: relative;
+  line-height: 17.92px;
+  font-size: 14px;
+  transition: none;
+  background: transparent !important;
+}
+
+.btn-group{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-control{
+  border: none;
+  transition: none;
+}
+
+.chat{
+  font-size: 14px;
+}
+
+.sticker_list {
+  width: 278px;
+  height: 320px;
+  position: absolute;
+  bottom: 65px;
+  right: 184px;
+  opacity: 1;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.35);
+  border-radius: 6px;
+  background-color: white;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-right: 10px;
+
+
+  &:hover{
+    overflow-y: overlay;
+  }
+}
+
+// https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 4px;
+}
+
+// ::-webkit-scrollbar {
+//   display: none;
+// }
+
+.sticker_item {
+  background-size: 304px 228px;
+  cursor: pointer;
+  height: 64px;
+  width: 64px;
+  background-position: -6px -6px;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.sticker_item:focus {
+  outline: 2px dashed blue;
+}
+
+.a {
+  background-image: url('/assets/icons/saG6UzxUtzQ.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 0 -76px;
+  bottom: 7px;
+  height: 8px;
+  width: 16px;
+}
+
+.sticker_grid{
+  table-layout: fixed;
+  width: 100%;
+}
+
+table{
+  text-align: center;
+}
+
+td{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

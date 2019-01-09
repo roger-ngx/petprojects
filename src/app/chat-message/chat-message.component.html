@@ -1,0 +1,13 @@
+<ng-container *ngFor='let message of messages | async; trackBy: trackMessage'>
+  <div class="t_media">
+    <div style='display: block;' *ngIf='!message.isSticker'>
+      <img class='align-self-start' *ngIf="!message.sendByMe" src="../assets/images/avatars/male-avatar-4.png">
+    </div>
+    <div style='display: block;' *ngIf='!message.isSticker'>
+      <p [ngClass]="{ 'msg-sent': message.sendByMe, 'msg-received': !message.sendByMe}" [innerHTML]=message.content></p>
+    </div>
+
+    <div [ngStyle]="{'background-image': 'url(' + message.content + ')'}" [ngClass]="{'sent': message.sendByMe, 'received': !message.sendByMe, 'sticker': true }"
+      *ngIf='message.isSticker'></div>
+  </div>
+</ng-container>

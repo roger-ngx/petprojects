@@ -1,0 +1,39 @@
+<div class="input-group">
+  <div class='input'>
+    <div contenteditable="true" class='message_area' (keydown.enter)="onEnter($event)" (input)="processInput($event)">
+    </div>
+  </div>
+  <div class='btn-group'>
+    <button id='btn_sticker' mat-icon-button (click)='showStickers()'>
+      <mat-icon>whatshot</mat-icon>
+    </button>
+    <button id='btn_emoticon' mat-icon-button (click)='showEmoticons()'>
+      <mat-icon>mood</mat-icon>
+    </button>
+    <button mat-icon-button (click)="onEnter($event)">
+      <mat-icon>thumb_up</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class='sticker_list' *ngIf='isShowingStickers'>
+  <table class='sticker_grid' cols=4 cellpadding=0 cellspacing=0>
+    <tbody>
+      <tr>
+        <td *ngFor='let item of stickies | async'>
+          <div [ngStyle]="{'background-image': 'url(' + item.url + ')'}" class='_sticker sticker_item' (click)='sendThisSticker(item.name)'></div>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class='sticker_list' [hidden]='!isShowingEmoticones'>
+  <table class='sticker_grid' cols=8 cellpadding=0 cellspacing=0>
+    <tbody id='s_t_body'>
+
+    </tbody>
+  </table>
+</div>

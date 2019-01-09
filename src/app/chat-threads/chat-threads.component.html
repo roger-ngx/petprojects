@@ -1,0 +1,43 @@
+<!-- conversations -->
+<div class='threads'>
+  <div class='t-head'>
+    <div class='h-name'>Messenger</div>
+  </div>
+  <div class='t-body'>
+      <ng-container  *ngFor="let thread of threads | async">
+          <app-chat-thread
+          [thread]="thread"
+          (onThreadSelected)="handleThreadClicked($event)">
+          </app-chat-thread>
+      </ng-container>
+  </div>
+  <button class='add_friend_btn' mat-fab color='warn' data-toggle="modal" data-target='#addFriendsModal' data-backdrop='static' data-keyboard='false'>
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<div class="modal" id='addFriendsModal' tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Friends</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input #input class='seach_input' type='text' placeholder="Enter a name" (keydown.enter)='seachFriends(input.value)'>
+        <div align='center' *ngIf='searchResult'>
+          <img src='{{searchResult.photoUrl}}'>
+          <p>{{searchResult.name}}</p>
+        </div>
+        <div align='center' *ngIf='!searchResult'>
+          <p>Try your best !!!</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id='btn_add' type="button" class="btn btn-primary" (click)='addFriend()' disabled>Add Friends</button>
+      </div>
+    </div>
+  </div>
+</div>

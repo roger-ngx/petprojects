@@ -1,0 +1,11 @@
+<div class="thread" (click)='clicked($event)'>
+  <div class='avatar'>
+      <img src="{{thread.photoUrl}}">
+  </div>
+
+  <div class="thread-body">
+    <div class='t-name'>
+      {{thread.id}}
+    </div>
+    <div class='t-lmsg' [innerHTML]='thread.content'></div>
+</div>
